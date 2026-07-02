@@ -109,6 +109,8 @@ controls:
     classes: ng-star-inserted
     tag: message-content
     notes: "id is dynamic per message (message-content-id-r_*), do not select on it; select on <message-content> tag"
+    generating_tag: pending-response
+    notes_generating: "Generation IN PROGRESS = presence of <pending-response> and/or <thinking-dots-animation> element in the conversation container. COMPLETE = those disappear and <message-content> appears. Use this as the start/done signal (send/stop also toggle aria Send message <-> Stop response)."
   response_content:
     label: null
     aria: null

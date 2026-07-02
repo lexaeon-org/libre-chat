@@ -104,6 +104,8 @@ controls:
     classes: agent-turn
     attr: "data-turn=assistant"
     notes: "Multiple stable handles: data-testid=conversation-turn-N (N=turn index), data-turn=assistant, data-turn-id=request-WEB:*. Inner div also carries class agent-turn (what SPE reads today). sr-only <h4> says \"ChatGPT said:\"."
+    generating_attr: "data-stream-active"
+    notes_generating: "IN PROGRESS = data-stream-active present/true on the streaming container; COMPLETE = gone/false."
   response_content:
     label: null
     aria: null

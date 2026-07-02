@@ -102,6 +102,8 @@ controls:
     id: null
     classes: message-bubble
     notes: "Best handle: data-testid=assistant-message (on the message-bubble div). An outer wrapper carries id=response-<uuid> (dynamic prefix response-, do not select on full id). thinking-container div may appear inside for reasoning."
+    generating_classes: thinking-container
+    notes_generating: "IN PROGRESS = .thinking-container present in the turn; COMPLETE = gone."
   response_content:
     label: null
     aria: null

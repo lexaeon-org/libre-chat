@@ -104,6 +104,8 @@ controls:
     classes: group
     attr: "data-is-streaming"
     notes: "Best handle: data-is-streaming attribute (false when done, true while generating - also usable as a done-signal). sr-only <h2> inside announces \"Claude responded: ...\". Tailwind utility classes are noise, do not select on them."
+    generating_attr: "data-is-streaming"
+    notes_generating: "IN PROGRESS = data-is-streaming='true' on response container; COMPLETE = 'false'."
   response_content:
     label: null
     aria: null

@@ -17,15 +17,38 @@
  * vice-versa). Semantic affordances (`--*-warning`, `--*-destructive`) are left
  * to the native tokens on purpose.
  *
- * Fonts mostly reuse already-bundled families (Inter, Roboto Mono) and system
- * stacks. `gemini` additionally pulls Google Sans Flex from Google Fonts (see
- * the `@import` below) and falls back to Inter/system if it fails to load. The
- * brand font is set on the scoped root (cascades to inheriting text) and on
- * `.font-sans` for the few elements that pin it explicitly; `.font-mono` (code)
- * is deliberately left alone.
+ * Fonts reuse already-bundled families (Inter, Roboto Mono) and system stacks.
+ * `gemini` additionally uses Google Sans Flex, which is self-hosted (OFL) from
+ * `public/fonts` via the `@font-face` rules below — no external font request is
+ * made — and falls back to Inter/system if it fails to load. The brand font is
+ * set on the scoped root (cascades to inheriting text) and on `.font-sans` for
+ * the few elements that pin it explicitly; `.font-mono` (code) is left alone.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+/* Google Sans Flex (variable, OFL) — self-hosted, latin + latin-ext subsets. */
+@font-face {
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 1 1000;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('$fonts/google-sans-flex-latin.woff2') format('woff2');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Google Sans Flex';
+  font-style: normal;
+  font-weight: 1 1000;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url('$fonts/google-sans-flex-latin-ext.woff2') format('woff2');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
 
 /* ── gemini — soft blue accent, light/white background, Google Sans Flex ── */
 html[data-brand='gemini'] {
